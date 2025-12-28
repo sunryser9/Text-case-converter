@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Case Converter for WhatsApp, Instagram & More</title>
+<meta name="description" content="Free online Text Case Converter. Convert text to UPPERCASE, lowercase, Sentence case, or Capitalize Words instantly. Works on WhatsApp, Instagram, and everywhere.">
+<meta name="keywords" content="text case converter, uppercase to lowercase online free, instagram text case converter, whatsapp text case converter, online text converter">
+<style>
+body { font-family: Arial, sans-serif; max-width: 700px; margin: 50px auto; padding: 20px; text-align: center; }
+h1 { font-size: 2em; margin-bottom: 20px; }
+textarea { width: 100%; height: 120px; padding: 10px; font-size: 1em; margin-bottom: 15px; }
+button { padding: 10px 20px; margin: 5px; font-size: 1em; cursor: pointer; }
+#outputText { background: #f0f0f0; }
+</style>
+</head>
+<body>
+
+<h1>Text Case Converter</h1>
+
+<textarea id="inputText" placeholder="Paste your text here"></textarea>
+
+<br>
+<button onclick="toUpper()">UPPERCASE</button>
+<button onclick="toLower()">lowercase</button>
+<button onclick="toSentence()">Sentence case</button>
+<button onclick="toCapitalize()">Capitalize Words</button>
+
+<br>
+<textarea id="outputText" placeholder="Converted text will appear here" readonly></textarea>
+
+<script>
+function toUpper() {
+  document.getElementById('outputText').value = document.getElementById('inputText').value.toUpperCase();
+}
+function toLower() {
+  document.getElementById('outputText').value = document.getElementById('inputText').value.toLowerCase();
+}
+function toSentence() {
+  let text = document.getElementById('inputText').value.toLowerCase();
+  document.getElementById('outputText').value = text.charAt(0).toUpperCase() + text.slice(1);
+}
+function toCapitalize() {
+  let text = document.getElementById('inputText').value;
+  document.getElementById('outputText').value = text.replace(/\b\w/g, c => c.toUpperCase());
+}
+</script>
+
+</body>
+</html>
